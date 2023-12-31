@@ -25,11 +25,50 @@ let notes = [
   }
 ];
 
+let users = [
+  {
+    userId: 1,
+    login: "aaa",
+    password: "bbb"
+  }
+];
+
 app.post('/list-notes', (req, res) => {
   const { userId } = req.body;
   const filteredNotes = notes.filter(note => note.userId==userId);
   console.log(filteredNotes);
   res.json(filteredNotes);
+});
+
+app.post('/login', (req, res) => {
+  const { login, password } = req.body;
+  if(users.some(user => user.login === login && user.password === password))
+    res.status(200).json({
+      userId: 1
+    });
+  res.status(401).send("Incorrect username or password");
+});
+
+app.post('/register', (req, res) => {
+  const { login, password } = req.body;
+  if(users.some(user => user.login === login))
+  {
+    res.status(400).json({
+      message: "User exists"
+    });
+  }
+  else
+  {
+    users=[...users, {
+      userId: 4,
+      login,
+      password,
+    }]
+    console.log(users);
+    res.status(200).json({
+      userId: 1
+    });
+  }
 });
 
 app.post("/get-image", (req, res)=>{

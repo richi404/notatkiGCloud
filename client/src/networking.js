@@ -71,3 +71,47 @@ export const usePicture = (name) => {
 
 return {data, isLoading, isError};
 }
+
+export const login = async (login, password, setLogged) =>
+{
+  const response=await fetch(`${SERVER_ADDRESS}/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      login,
+      password
+    }),
+  });
+  if(response.status!==401)
+  {
+    const {userId}= await response.json();
+    setLogged(userId);
+    localStorage.setItem("userId", userId);
+    return true;
+  }
+  return false;
+}
+
+export const register = async (login, password, setLogged) =>
+{
+  const response=await fetch(`${SERVER_ADDRESS}/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      login,
+      password
+    }),
+  });
+  if(response.status!==400)
+  {
+    const {userId}= await response.json();
+    localStorage.setItem("userId", userId);
+    setLogged(userId);
+    return true;
+  }
+  return false;
+}
