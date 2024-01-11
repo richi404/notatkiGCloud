@@ -1,6 +1,7 @@
 import { useQuery, useQueryClient, useMutation } from "react-query";
 
-const SERVER_ADDRESS = 'http://localhost:3000';
+//const SERVER_ADDRESS = 'https://nodejs-app-tdppprkmta-ew.a.run.app';
+const SERVER_ADDRESS = 'http://localhost:8080';
 
 export const useNotes = (userId) => {
     const queryClient = useQueryClient();
