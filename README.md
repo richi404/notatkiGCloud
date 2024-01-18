@@ -7,3 +7,5 @@ W skład będzie wchodzić baza danych (Cloud SQL) oraz baza obrazów (Cloud Sto
 Całość zostanie napisana w node.js i React-cie i uruchomiona w formie Cloud Run. Całość będzie budowana przy pomocy terraforma i dockera.
 
 Link do aplikacji: https://reactjs-app-tdppprkmta-ew.a.run.app/
+
+<img width="1024" alt="Screenshot 2024-01-18 at 17 04 28" src="https://github.com/richi404/notatkiGCloud/assets/52291040/c2004819-09b4-49c4-9ead-4245a10f3b03">
