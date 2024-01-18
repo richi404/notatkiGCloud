@@ -17,5 +17,4 @@ CREATE TABLE IF NOT EXISTS notes (
     FOREIGN KEY (userId) REFERENCES user(id)
 );
 
-INSERT INTO user (logins, password) VALUES ('aaa', 'bbb');
-INSERT INTO user (logins, password) VALUES ('ccc', 'ddd');
+INSERT INTO user (logins, password) VALUES ('test', 'test');

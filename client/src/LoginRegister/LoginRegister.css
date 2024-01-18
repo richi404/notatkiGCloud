@@ -1,0 +1,24 @@
+.loginForm
+{
+    border: 5px solid lightgrey;
+    background-color: white;
+    color: black;
+    margin-top: 200px;
+    text-align: center;
+    align-items: center;
+    padding:20px;
+}
+
+#register_info{
+    font-size: 18px;
+}
+
+#register_link{
+    color: lightblue;
+    cursor: pointer;
+}
+
+#incorrect_login{
+    font-size: 18px;
+    color: red;
+}
